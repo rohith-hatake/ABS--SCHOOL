@@ -171,7 +171,7 @@ table {
     margin-top: 10px;
 }
 th, td {
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid #cbd235;
     padding: 10px;
     text-align: left;
 }
