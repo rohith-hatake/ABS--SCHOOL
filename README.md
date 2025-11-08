@@ -211,7 +211,7 @@ tr:hover {
     </header>
 
     
-    <main id="feedbackSection">
+<main id="feedbackSection">
         <div class="card">
             <h2 class="section-title"><i class="fas fa-comments"></i> Share Your Feedback</h2>
             <form id="feedbackForm">
@@ -227,11 +227,10 @@ tr:hover {
                     </select>
                 </div>
 
-                <div class="form-group">
+<div class="form-group">
                     <label for="name" class="required">Name</label>
                     <input type="text" id="name" placeholder="e.g., Ali Raza, Ms. Fatima, Dr. Hassan" required>
                 </div>
-
                 <div class="form-group">
                     <label>Overall Experience</label>
                     <div class="rating" id="experienceRating">
@@ -243,40 +242,32 @@ tr:hover {
                     </div>
                     <input type="hidden" id="experienceScore" value="3">
                 </div>
-
                 <div class="form-group">
                     <label for="suggestions">Suggestions for Improvement</label>
                     <textarea id="suggestions" placeholder="How can we enhance future exhibitions?"></textarea>
                 </div>
-
                 <div class="form-group">
                     <label for="highlight">Most Impressive Project & Why</label>
                     <textarea id="highlight" placeholder="e.g., The 'AI-Powered Study Buddy' stood out because..."></textarea>
                 </div>
-
                 <div class="form-group">
                     <label>
                         <input type="checkbox" id="anonymous">
                         Submit anonymously (your name won’t be saved)
                     </label>
                 </div>
-
                 <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Submit Feedback</button>
             </form>
-
             <div id="successMessage" class="success-message">
                 <i class="fas fa-check-circle fa-2x" style="color: var(--accent); margin-bottom: 10px;"></i>
                 <h3>Thank You!</h3>
                 <p>Your feedback helps us shape the future of CS education at ABS Global Smart School.</p>
             </div>
         </div>
-
         <div style="text-align:center;">
             <button class="btn" onclick="requestAdminPassword()"><i class="fas fa-lock"></i> Admin Dashboard</button>
         </div>
     </main>
-
-    
     <section id="adminDashboard" class="dashboard">
         <a href="#" class="back-btn" onclick="showForm()"><i class="fas fa-arrow-left"></i> Back to Feedback</a>
         <h2 class="section-title"><i class="fas fa-table"></i> Feedback Dashboard</h2>
@@ -298,7 +289,6 @@ tr:hover {
             <p id="noData" style="text-align:center;color:var(--gray);margin-top:10px;">No feedback submitted yet.</p>
         </div>
     </section>
-
     <footer>
         <p>© 2025 ABS Global Smart School • Computer Science Department</p>
     </footer>
