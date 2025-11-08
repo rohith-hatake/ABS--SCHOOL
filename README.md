@@ -171,13 +171,17 @@ table {
     margin-top: 10px;
 }
 th, td {
-    border-bottom: 1px solid #cbd235;
+    border-bottom: 1px solid #334155;
     padding: 10px;
     text-align: left;
 }
 th {
     background: rgba(16, 185, 129, 0.2);
     color: var(--accent);
+}
+/* Make all table text blue as requested */
+td {
+    color: #3b82f6; /* blue-500 */
 }
 tr:hover {
     background: rgba(255,255,255,0.05);
@@ -192,7 +196,7 @@ tr:hover {
     margin-bottom: 15px;
 }
 .back-btn:hover {
-    background: #ff08;
+    background: #1d4ed8;
 }
 @media (max-width: 600px) {
     .logo h1 { font-size: 1.8rem; }
@@ -209,9 +213,8 @@ tr:hover {
         </div>
         <p class="subtitle">Computer Science Exhibition 2025 • Feedback Portal</p>
     </header>
-
-    
-<main id="feedbackSection">
+    <!-- FEEDBACK FORM -->
+    <main id="feedbackSection">
         <div class="card">
             <h2 class="section-title"><i class="fas fa-comments"></i> Share Your Feedback</h2>
             <form id="feedbackForm">
@@ -226,8 +229,7 @@ tr:hover {
                         <option value="guest">Guest/Visitor</option>
                     </select>
                 </div>
-
-<div class="form-group">
+            <div class="form-group">
                     <label for="name" class="required">Name</label>
                     <input type="text" id="name" placeholder="e.g., Ali Raza, Ms. Fatima, Dr. Hassan" required>
                 </div>
@@ -268,6 +270,7 @@ tr:hover {
             <button class="btn" onclick="requestAdminPassword()"><i class="fas fa-lock"></i> Admin Dashboard</button>
         </div>
     </main>
+    <!-- ADMIN DASHBOARD -->
     <section id="adminDashboard" class="dashboard">
         <a href="#" class="back-btn" onclick="showForm()"><i class="fas fa-arrow-left"></i> Back to Feedback</a>
         <h2 class="section-title"><i class="fas fa-table"></i> Feedback Dashboard</h2>
@@ -295,7 +298,7 @@ tr:hover {
 </div>
 
 <script>
-
+// ⭐ Star rating logic
 const stars = document.querySelectorAll('.star');
 const experienceScore = document.getElementById('experienceScore');
 stars.forEach(star => {
@@ -310,7 +313,7 @@ stars.forEach(star => {
     });
 });
 
-
+// 💬 Submit feedback
 document.getElementById('feedbackForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -342,15 +345,17 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
     experienceScore.value = '3';
 });
 
+// 🔐 Password check before showing Admin Dashboard
 function requestAdminPassword() {
     const password = prompt("Enter Admin Password:");
-    if (password === "abs2025") {
+    if (password === "abs2025") { // ✅ Change password here if needed
         showDashboard();
     } else if (password !== null) {
         alert("❌ Incorrect password. Access denied!");
     }
 }
 
+// 📊 Show Admin Dashboard
 function showDashboard() {
     document.getElementById('feedbackSection').style.display = 'none';
     document.getElementById('adminDashboard').style.display = 'block';
@@ -379,6 +384,8 @@ function showDashboard() {
         tbody.appendChild(row);
     });
 }
+
+// 🔙 Go back to Feedback Form
 function showForm() {
     document.getElementById('feedbackSection').style.display = 'block';
     document.getElementById('adminDashboard').style.display = 'none';
